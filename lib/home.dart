@@ -87,11 +87,12 @@ class _CategorypartState extends State<Categorypart> {
                   ]),
                 ),
                 onTap: () {
-                  String selectedCategory;
+                  // String selectedCategory;
                   setState(() {
-                    selectedCategory=index.toString();
+                    // selectedCategory=index.toString();
                   });
-                  Navigator.pushNamed(context,IndivualPage.id,arguments: selectedCategory);
+                  // Navigator.pushNamed(context,IndivualPage.id);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {return IndivualPage();}));
                 }
               );
             },

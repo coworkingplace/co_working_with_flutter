@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'individual_place_page.dart';
+// import 'individual_place_page.dart';
 import 'home.dart';
 import 'cart.dart';
 import 'help.dart';
@@ -15,15 +15,16 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(        
         primarySwatch: Colors.blue,      
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: MainHome.id,
-      routes: {
-        MainHome.id: (context) => MainHome(),
-        IndivualPage.id: (context) => IndivualPage(),
-      },
+      // routes: {
+      //   MainHome.id: (context) => MainHome(),
+      //   IndivualPage.id: (context) => IndivualPage(),
+      // },
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -67,11 +68,15 @@ class _MyHomePageState extends State<MyHomePage> {
    
     return Scaffold(
         appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.blueAccent,
           title: Text(
             "hello",
             style: TextStyle(color: Colors.white),
             textAlign: TextAlign.center,
           ),
+          leading: Icon(Icons.menu),
+          
         ),
         bottomNavigationBar: CurvedNavigationBar(
           index: 2,
